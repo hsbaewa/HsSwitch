@@ -11,12 +11,12 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        app:textSize="10dp"
-        app:checkedText="켜짐"
-        app:unCheckedText="꺼짐"
-        app:switchShowText="true"
-        app:checkedColor="#f00"
-        app:shadowColor="#00f"
+        app:HsSwitch_textSize="10dp"
+        app:HsSwitch_checkedText="켜짐"
+        app:HsSwitch_unCheckedText="꺼짐"
+        app:HsSwitch_switchShowText="true"
+        app:HsSwitch_checkedColor="#f00"
+        app:HsSwitch_shadowColor="#00f"
         />
 
     <!--

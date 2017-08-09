@@ -81,92 +81,92 @@ public class HsSwitch extends View implements Checkable {
         }
 
         shadowEffect = optBoolean(typedArray,
-                R.styleable.HsSwitch_shadowEffect,
+                R.styleable.HsSwitch_HsSwitch_shadowEffect,
                 true);
 
         uncheckCircleColor = optColor(typedArray,
-                R.styleable.HsSwitch_unCheckCircleColor,
+                R.styleable.HsSwitch_HsSwitch_unCheckCircleColor,
                 0XffAAAAAA);//0XffAAAAAA;
 
         uncheckCircleWidth = optPixelSize(typedArray,
-                R.styleable.HsSwitch_unCheckCircleWidth,
+                R.styleable.HsSwitch_HsSwitch_unCheckCircleWidth,
                 dp2pxInt(1.5f));//dp2pxInt(1.5f);
 
         uncheckCircleOffsetX = dp2px(10);
 
         uncheckCircleRadius = optPixelSize(typedArray,
-                R.styleable.HsSwitch_unCheckCircleRadius,
+                R.styleable.HsSwitch_HsSwitch_unCheckCircleRadius,
                 dp2px(4));//dp2px(4);
 
         checkedLineOffsetX = dp2px(4);
         checkedLineOffsetY = dp2px(4);
 
         shadowRadius = optPixelSize(typedArray,
-                R.styleable.HsSwitch_shadowRadius,
+                R.styleable.HsSwitch_HsSwitch_shadowRadius,
                 dp2pxInt(2.5f));//dp2pxInt(2.5f);
 
         shadowOffset = optPixelSize(typedArray,
-                R.styleable.HsSwitch_shadowOffset,
+                R.styleable.HsSwitch_HsSwitch_shadowOffset,
                 dp2pxInt(1.5f));//dp2pxInt(1.5f);
 
         shadowColor = optColor(typedArray,
-                R.styleable.HsSwitch_shadowColor,
+                R.styleable.HsSwitch_HsSwitch_shadowColor,
                 0X33000000);//0X33000000;
 
         uncheckColor = optColor(typedArray,
-                R.styleable.HsSwitch_unCheckColor,
+                R.styleable.HsSwitch_HsSwitch_unCheckColor,
                 0XffDDDDDD);//0XffDDDDDD;
 
         checkedColor = optColor(typedArray,
-                R.styleable.HsSwitch_checkedColor,
+                R.styleable.HsSwitch_HsSwitch_checkedColor,
                 0Xff51d367);//0Xff51d367;
 
         borderWidth = optPixelSize(typedArray,
-                R.styleable.HsSwitch_borderWidth,
+                R.styleable.HsSwitch_HsSwitch_borderWidth,
                 dp2pxInt(1));//dp2pxInt(1);
 
         checkLineColor = optColor(typedArray,
-                R.styleable.HsSwitch_checklineColor,
+                R.styleable.HsSwitch_HsSwitch_checklineColor,
                 Color.WHITE);//Color.WHITE;
 
         checkLineWidth = optPixelSize(typedArray,
-                R.styleable.HsSwitch_checklineWidth,
+                R.styleable.HsSwitch_HsSwitch_checklineWidth,
                 dp2pxInt(1f));//dp2pxInt(1.0f);
 
         checkLineLength = dp2px(6);
 
         int buttonColor = optColor(typedArray,
-                R.styleable.HsSwitch_buttonColor,
+                R.styleable.HsSwitch_HsSwitch_buttonColor,
                 Color.WHITE);//Color.WHITE;
 
         int effectDuration = optInt(typedArray,
-                R.styleable.HsSwitch_effectDuration,
+                R.styleable.HsSwitch_HsSwitch_effectDuration,
                 300);//300;
 
         isChecked = optBoolean(typedArray,
-                R.styleable.HsSwitch_checked,
+                R.styleable.HsSwitch_HsSwitch_checked,
                 false);
 
         showIndicator = optBoolean(typedArray,
-                R.styleable.HsSwitch_showIndicator,
+                R.styleable.HsSwitch_HsSwitch_showIndicator,
                 true);
 
         background = optColor(typedArray,
-                R.styleable.HsSwitch_switchBackground,
+                R.styleable.HsSwitch_HsSwitch_switchBackground,
                 Color.WHITE);//Color.WHITE;
 
         enableEffect = optBoolean(typedArray,
-                R.styleable.HsSwitch_enableEffect,
+                R.styleable.HsSwitch_HsSwitch_enableEffect,
                 true);
 
         isShowText = optBoolean(typedArray,
-                R.styleable.HsSwitch_switchShowText,
+                R.styleable.HsSwitch_HsSwitch_switchShowText,
                 false
                 );
-        mTextOn = optString(typedArray, R.styleable.HsSwitch_checkedText, "On");
-        mTextOff = optString(typedArray, R.styleable.HsSwitch_unCheckedText, "Off");
+        mTextOn = optString(typedArray, R.styleable.HsSwitch_HsSwitch_checkedText, "On");
+        mTextOff = optString(typedArray, R.styleable.HsSwitch_HsSwitch_unCheckedText, "Off");
 
-        mTextSize = optPixelSize(typedArray, R.styleable.HsSwitch_textSize, dp2pxInt(10));
+        mTextSize = optPixelSize(typedArray, R.styleable.HsSwitch_HsSwitch_textSize, dp2pxInt(10));
 
         if(typedArray != null){
             typedArray.recycle();
