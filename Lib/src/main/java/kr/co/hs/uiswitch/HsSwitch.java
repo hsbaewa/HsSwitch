@@ -16,7 +16,6 @@ import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.widget.Checkable;
-
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ArgbEvaluator;
 import com.nineoldandroids.animation.ValueAnimator;
@@ -25,7 +24,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 /**
  * SwitchButton.
  */
-public class SwitchButton extends View implements Checkable {
+public class HsSwitch extends View implements Checkable {
     private static final int DEFAULT_WIDTH = dp2pxInt(58);
     private static final int DEFAULT_HEIGHT = dp2pxInt(36);
 
@@ -45,23 +44,23 @@ public class SwitchButton extends View implements Checkable {
     private final int ANIMATE_STATE_PENDING_SETTLE = 4;
     private final int ANIMATE_STATE_SWITCH = 5;
 
-    public SwitchButton(Context context) {
+    public HsSwitch(Context context) {
         super(context);
         init(context, null);
     }
 
-    public SwitchButton(Context context, AttributeSet attrs) {
+    public HsSwitch(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public SwitchButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public HsSwitch(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public SwitchButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public HsSwitch(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
@@ -78,96 +77,96 @@ public class SwitchButton extends View implements Checkable {
 
         TypedArray typedArray = null;
         if(attrs != null){
-            typedArray = context.obtainStyledAttributes(attrs, R.styleable.SwitchButton);
+            typedArray = context.obtainStyledAttributes(attrs, R.styleable.HsSwitch);
         }
 
         shadowEffect = optBoolean(typedArray,
-                R.styleable.SwitchButton_sb_shadow_effect,
+                R.styleable.HsSwitch_shadowEffect,
                 true);
 
         uncheckCircleColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_uncheckcircle_color,
+                R.styleable.HsSwitch_unCheckCircleColor,
                 0XffAAAAAA);//0XffAAAAAA;
 
         uncheckCircleWidth = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_uncheckcircle_width,
+                R.styleable.HsSwitch_unCheckCircleWidth,
                 dp2pxInt(1.5f));//dp2pxInt(1.5f);
 
         uncheckCircleOffsetX = dp2px(10);
 
         uncheckCircleRadius = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_uncheckcircle_radius,
+                R.styleable.HsSwitch_unCheckCircleRadius,
                 dp2px(4));//dp2px(4);
 
         checkedLineOffsetX = dp2px(4);
         checkedLineOffsetY = dp2px(4);
 
         shadowRadius = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_shadow_radius,
+                R.styleable.HsSwitch_shadowRadius,
                 dp2pxInt(2.5f));//dp2pxInt(2.5f);
 
         shadowOffset = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_shadow_offset,
+                R.styleable.HsSwitch_shadowOffset,
                 dp2pxInt(1.5f));//dp2pxInt(1.5f);
 
         shadowColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_shadow_color,
+                R.styleable.HsSwitch_shadowColor,
                 0X33000000);//0X33000000;
 
         uncheckColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_uncheck_color,
+                R.styleable.HsSwitch_unCheckColor,
                 0XffDDDDDD);//0XffDDDDDD;
 
         checkedColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_checked_color,
+                R.styleable.HsSwitch_checkedColor,
                 0Xff51d367);//0Xff51d367;
 
         borderWidth = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_border_width,
+                R.styleable.HsSwitch_borderWidth,
                 dp2pxInt(1));//dp2pxInt(1);
 
         checkLineColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_checkline_color,
+                R.styleable.HsSwitch_checklineColor,
                 Color.WHITE);//Color.WHITE;
 
         checkLineWidth = optPixelSize(typedArray,
-                R.styleable.SwitchButton_sb_checkline_width,
+                R.styleable.HsSwitch_checklineWidth,
                 dp2pxInt(1f));//dp2pxInt(1.0f);
 
         checkLineLength = dp2px(6);
 
         int buttonColor = optColor(typedArray,
-                R.styleable.SwitchButton_sb_button_color,
+                R.styleable.HsSwitch_buttonColor,
                 Color.WHITE);//Color.WHITE;
 
         int effectDuration = optInt(typedArray,
-                R.styleable.SwitchButton_sb_effect_duration,
+                R.styleable.HsSwitch_effectDuration,
                 300);//300;
 
         isChecked = optBoolean(typedArray,
-                R.styleable.SwitchButton_sb_checked,
+                R.styleable.HsSwitch_checked,
                 false);
 
         showIndicator = optBoolean(typedArray,
-                R.styleable.SwitchButton_sb_show_indicator,
+                R.styleable.HsSwitch_showIndicator,
                 true);
 
         background = optColor(typedArray,
-                R.styleable.SwitchButton_sb_background,
+                R.styleable.HsSwitch_switchBackground,
                 Color.WHITE);//Color.WHITE;
 
         enableEffect = optBoolean(typedArray,
-                R.styleable.SwitchButton_sb_enable_effect,
+                R.styleable.HsSwitch_enableEffect,
                 true);
 
         isShowText = optBoolean(typedArray,
-                R.styleable.SwitchButton_sb_show_text,
+                R.styleable.HsSwitch_switchShowText,
                 false
                 );
-        mTextOn = optString(typedArray, R.styleable.SwitchButton_sb_checkedText, "On");
-        mTextOff = optString(typedArray, R.styleable.SwitchButton_sb_unCheckedText, "Off");
+        mTextOn = optString(typedArray, R.styleable.HsSwitch_checkedText, "On");
+        mTextOff = optString(typedArray, R.styleable.HsSwitch_unCheckedText, "Off");
 
-        mTextSize = optPixelSize(typedArray, R.styleable.SwitchButton_sb_textSize, dp2pxInt(10));
+        mTextSize = optPixelSize(typedArray, R.styleable.HsSwitch_textSize, dp2pxInt(10));
 
         if(typedArray != null){
             typedArray.recycle();
@@ -839,7 +838,7 @@ public class SwitchButton extends View implements Checkable {
     }
 
     public interface OnCheckedChangeListener{
-        void onCheckedChanged(SwitchButton view, boolean isChecked);
+        void onCheckedChanged(HsSwitch view, boolean isChecked);
     }
 
     /*******************************************************/
