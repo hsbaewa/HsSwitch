@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="HsSwitch">
-        <attr name="shadowRadius" format="reference|dimension"/>
-        <attr name="shadowOffset" format="reference|dimension"/>
-        <attr name="shadowColor" format="reference|color"/>
-        <attr name="unCheckColor" format="reference|color"/>
-        <attr name="checkedColor" format="reference|color"/>
+        <attr name="HsSwitch_shadowRadius" format="reference|dimension"/>
+        <attr name="HsSwitch_shadowOffset" format="reference|dimension"/>
+        <attr name="HsSwitch_shadowColor" format="reference|color"/>
+        <attr name="HsSwitch_unCheckColor" format="reference|color"/>
+        <attr name="HsSwitch_checkedColor" format="reference|color"/>
 
-        <attr name="borderWidth" format="reference|dimension"/>
-        <attr name="checklineColor" format="reference|color"/>
-        <attr name="checklineWidth" format="reference|dimension"/>
-        <attr name="unCheckCircleColor" format="reference|color"/>
-        <attr name="unCheckCircleWidth" format="reference|dimension"/>
-        <attr name="unCheckCircleRadius" format="reference|dimension"/>
-        <attr name="checkedText" format="reference|string"/>
-        <attr name="unCheckedText" format="reference|string"/>
-        <attr name="textSize" format="reference|dimension"/>
+        <attr name="HsSwitch_borderWidth" format="reference|dimension"/>
+        <attr name="HsSwitch_checklineColor" format="reference|color"/>
+        <attr name="HsSwitch_checklineWidth" format="reference|dimension"/>
+        <attr name="HsSwitch_unCheckCircleColor" format="reference|color"/>
+        <attr name="HsSwitch_unCheckCircleWidth" format="reference|dimension"/>
+        <attr name="HsSwitch_unCheckCircleRadius" format="reference|dimension"/>
+        <attr name="HsSwitch_checkedText" format="reference|string"/>
+        <attr name="HsSwitch_unCheckedText" format="reference|string"/>
+        <attr name="HsSwitch_textSize" format="reference|dimension"/>
 
-        <attr name="checked" format="reference|boolean"/>
-        <attr name="shadowEffect" format="reference|boolean"/>
-        <attr name="effectDuration" format="reference|integer"/>
-        <attr name="buttonColor" format="reference|color"/>
-        <attr name="showIndicator" format="reference|boolean"/>
-        <attr name="switchBackground" format="reference|color"/>
-        <attr name="enableEffect" format="reference|boolean"/>
-        <attr name="switchShowText" format="reference|boolean"/>
+        <attr name="HsSwitch_checked" format="reference|boolean"/>
+        <attr name="HsSwitch_shadowEffect" format="reference|boolean"/>
+        <attr name="HsSwitch_effectDuration" format="reference|integer"/>
+        <attr name="HsSwitch_buttonColor" format="reference|color"/>
+        <attr name="HsSwitch_showIndicator" format="reference|boolean"/>
+        <attr name="HsSwitch_switchBackground" format="reference|color"/>
+        <attr name="HsSwitch_enableEffect" format="reference|boolean"/>
+        <attr name="HsSwitch_switchShowText" format="reference|boolean"/>
     </declare-styleable>
 </resources>
