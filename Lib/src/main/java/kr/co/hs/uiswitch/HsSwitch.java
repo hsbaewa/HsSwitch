@@ -353,9 +353,10 @@ public class HsSwitch extends View implements Checkable {
     }
 
     protected void drawCheckedText(Canvas canvas){
+        float circleWidth = (height - borderWidth);
         drawCheckedText(canvas,
                 viewState.checkedLineColor,
-                centerX - (width/4),
+                centerX - (circleWidth / 2),
                 centerY,
                 paint
                 );
@@ -394,12 +395,10 @@ public class HsSwitch extends View implements Checkable {
     ){
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(color);
-//        paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(mTextSize);
         String text = mTextOn;
         Rect textBounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), textBounds);
-
         canvas.drawText(text, centerX - textBounds.exactCenterX(), centerY - textBounds.exactCenterY(), paint);
     }
 
@@ -418,9 +417,10 @@ public class HsSwitch extends View implements Checkable {
     }
 
     private void drawUncheckedText(Canvas canvas){
+        float circleWidth = (height - borderWidth);
         drawUncheckedText(canvas,
                 uncheckCircleColor,
-                centerX + (width/4),
+                centerX + (circleWidth / 2),
                 centerY,
                 paint
                 );
@@ -458,9 +458,7 @@ public class HsSwitch extends View implements Checkable {
     ){
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(color);
-//        paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(mTextSize);
-//        canvas.drawText("Off", centerX, centerY, paint);
         String text = mTextOff;
         Rect textBounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), textBounds);

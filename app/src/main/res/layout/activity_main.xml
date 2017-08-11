@@ -8,8 +8,8 @@
 
     <kr.co.hs.uiswitch.HsSwitch
         android:id="@+id/switch_button"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         android:layout_marginTop="10dp"
         app:HsSwitch_textSize="10dp"
         app:HsSwitch_checkedText="켜짐"
