@@ -530,12 +530,25 @@ public class HsSwitch extends View implements Checkable {
     }
 
     @Override
-    public void setChecked(boolean checked) {
+    public synchronized void setChecked(boolean checked) {
         if(checked == isChecked()){
             postInvalidate();
             return;
         }
-        toggle(enableEffect, false);
+        if(!isEnabled()){return;}
+
+        if(checked){
+            if(!isChecking){
+                isChecking = true;
+                checked(enableEffect);
+            }
+        }
+        else{
+            if(isChecking){
+                isChecking = false;
+                unChecked(enableEffect);
+            }
+        }
     }
 
     @Override
@@ -554,6 +567,46 @@ public class HsSwitch extends View implements Checkable {
      */
     public void toggle(boolean animate) {
         toggle(animate, true);
+    }
+
+    private void checked(boolean animate){
+        if(isChecked())
+            return;
+
+        if(valueAnimator.isRunning()){
+            valueAnimator.cancel();
+        }
+
+        if(!enableEffect || !animate){
+            setCheckedViewState(viewState);
+            return;
+        }
+
+        animateState = ANIMATE_STATE_SWITCH;
+        beforeState.copy(viewState);
+
+        setCheckedViewState(afterState);
+        valueAnimator.start();
+    }
+
+    private void unChecked(boolean animate){
+        if(!isChecked())
+            return;
+
+        if(valueAnimator.isRunning()){
+            valueAnimator.cancel();
+        }
+
+        if(!enableEffect || !animate){
+            setUncheckViewState(viewState);
+            return;
+        }
+
+        animateState = ANIMATE_STATE_SWITCH;
+        beforeState.copy(viewState);
+
+        setUncheckViewState(afterState);
+        valueAnimator.start();
     }
 
     private void toggle(boolean animate, boolean broadcast) {
@@ -593,8 +646,10 @@ public class HsSwitch extends View implements Checkable {
 
         if(isChecked()){
             //切换到unchecked
+            isChecking = false;
             setUncheckViewState(afterState);
         }else{
+            isChecking = true;
             setCheckedViewState(afterState);
         }
         valueAnimator.start();
@@ -1032,6 +1087,8 @@ public class HsSwitch extends View implements Checkable {
      *是否选中
      */
     private boolean isChecked;
+    //애니메이션 진행중인 경우
+    private boolean isChecking;
     /**
      * 是否启用动画
      */

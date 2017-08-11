@@ -1,6 +1,7 @@
 package kr.co.hs.uiswitch.sample;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 import kr.co.hs.uiswitch.HsSwitch;
 
@@ -12,7 +13,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		HsSwitch switchButton = (HsSwitch) findViewById(R.id.switch_button);
+		final HsSwitch switchButton = (HsSwitch) findViewById(R.id.switch_button);
 //		switchButton.setChecked(true);
 //		switchButton.isChecked();
 //		switchButton.toggle();     //switch state
@@ -35,6 +36,12 @@ public class MainActivity extends Activity {
 //			}
 //		});
 
+		findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				switchButton.setChecked(true);
+			}
+		});
 
 
 	}
