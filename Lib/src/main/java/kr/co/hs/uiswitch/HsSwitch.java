@@ -530,25 +530,12 @@ public class HsSwitch extends View implements Checkable {
     }
 
     @Override
-    public synchronized void setChecked(boolean checked) {
+    public void setChecked(boolean checked) {
         if(checked == isChecked()){
             postInvalidate();
             return;
         }
-        if(!isEnabled()){return;}
-
-        if(checked){
-            if(!isChecking){
-                isChecking = true;
-                checked(enableEffect);
-            }
-        }
-        else{
-            if(isChecking){
-                isChecking = false;
-                unChecked(enableEffect);
-            }
-        }
+        toggle(enableEffect, false);
     }
 
     @Override
@@ -569,9 +556,11 @@ public class HsSwitch extends View implements Checkable {
         toggle(animate, true);
     }
 
-    private void checked(boolean animate){
-        if(isChecked())
+    public void checked(boolean animate){
+        if(isChecked() || isChecking)
             return;
+
+        isChecking = true;
 
         if(valueAnimator.isRunning()){
             valueAnimator.cancel();
@@ -589,9 +578,11 @@ public class HsSwitch extends View implements Checkable {
         valueAnimator.start();
     }
 
-    private void unChecked(boolean animate){
-        if(!isChecked())
+    public void unChecked(boolean animate){
+        if(!isChecked() || !isChecking)
             return;
+
+        isChecking = false;
 
         if(valueAnimator.isRunning()){
             valueAnimator.cancel();

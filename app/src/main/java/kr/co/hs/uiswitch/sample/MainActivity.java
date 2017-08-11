@@ -14,6 +14,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		final HsSwitch switchButton = (HsSwitch) findViewById(R.id.switch_button);
+
+		switchButton.setChecked(true);
 //		switchButton.setChecked(true);
 //		switchButton.isChecked();
 //		switchButton.toggle();     //switch state
@@ -39,7 +41,7 @@ public class MainActivity extends Activity {
 		findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				switchButton.setChecked(true);
+				switchButton.checked(true);
 			}
 		});
 
