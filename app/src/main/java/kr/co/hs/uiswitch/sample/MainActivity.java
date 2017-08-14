@@ -38,12 +38,12 @@ public class MainActivity extends Activity {
 //			}
 //		});
 
-		findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				switchButton.checked(true);
-			}
-		});
+//		findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				switchButton.checked(true);
+//			}
+//		});
 
 
 	}

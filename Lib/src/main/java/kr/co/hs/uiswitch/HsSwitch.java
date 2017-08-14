@@ -20,7 +20,6 @@ import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ArgbEvaluator;
 import com.nineoldandroids.animation.ValueAnimator;
 
-
 /**
  * SwitchButton.
  */
@@ -1259,26 +1258,10 @@ public class HsSwitch extends View implements Checkable {
     };
 
 
-    /*******************************************************/
-    /**
-     * 保存动画状态
-     * */
     private static class ViewState {
-        /**
-         * 按钮x位置[buttonMinX-buttonMaxX]
-         */
         float buttonX;
-        /**
-         * 状态背景颜色
-         */
         int checkStateColor;
-        /**
-         * 选中线的颜色
-         */
         int checkedLineColor;
-        /**
-         * 状态背景的半径
-         */
         float radius;
         ViewState(){}
         private void copy(ViewState source){
