@@ -562,11 +562,18 @@ public class HsSwitch extends View implements Checkable {
 
         isChecking = true;
 
+        if(!isUiInited){
+            isChecked = !isChecked;
+            return;
+        }
+
+
         if(valueAnimator.isRunning()){
             valueAnimator.cancel();
         }
 
         if(!enableEffect || !animate){
+            isChecked = !isChecked;
             setCheckedViewState(viewState);
             return;
         }
@@ -584,11 +591,17 @@ public class HsSwitch extends View implements Checkable {
 
         isChecking = false;
 
+        if(!isUiInited){
+            isChecked = !isChecked;
+            return;
+        }
+
         if(valueAnimator.isRunning()){
             valueAnimator.cancel();
         }
 
         if(!enableEffect || !animate){
+            isChecked = !isChecked;
             setUncheckViewState(viewState);
             return;
         }
